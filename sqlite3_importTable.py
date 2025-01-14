@@ -15,9 +15,9 @@ CREATE TABLE IF NOT EXISTS utenti (
 
 workbook = load_workbook("dati_utenti.xlsx")
 
-sheet = workbook["Utenti"]
+foglio = workbook["Utenti"]
 
-for row in sheet.iter_rows(min_row=2, values_only=True):
+for row in foglio.iter_rows(min_row=2, values_only=True):
     nome, cognome, email, numero_telefono = row  
     
     cursor.execute("""
